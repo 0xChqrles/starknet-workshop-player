@@ -1,4 +1,7 @@
+use starknet::ContractAddress;
+use board::contract::interface::BoardABIDispatcher;
+
 #[starknet::interface]
 pub trait IParticipant<TState> {
-    fn name(self: @TState) -> felt252;
+    fn board(self: @TState) -> BoardABIDispatcher;
 }

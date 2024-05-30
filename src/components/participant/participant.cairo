@@ -2,7 +2,7 @@
 pub mod ParticipantComponent {
     use player::components::participant::interface::IParticipant;
     use starknet::ContractAddress;
-    use board::contract::interface::BoardABIDispatcher;
+    use board::contract::interface::{BoardABIDispatcher, BoardABIDispatcherTrait};
 
     //
     // Storage
@@ -10,7 +10,6 @@ pub mod ParticipantComponent {
 
     #[storage]
     struct Storage {
-        name: felt252,
         board: BoardABIDispatcher,
     }
 
@@ -22,8 +21,8 @@ pub mod ParticipantComponent {
     impl Participant<
         TContractState, +HasComponent<TContractState>,
     > of IParticipant<ComponentState<TContractState>> {
-        fn name(self: @ComponentState<TContractState>) -> felt252 {
-            self.name.read()
+        fn board(self: @ComponentState<TContractState>) -> BoardABIDispatcher {
+            self.board.read()
         }
     }
 
@@ -38,8 +37,13 @@ pub mod ParticipantComponent {
         fn initializer(
             ref self: ComponentState<TContractState>, name: felt252, board_address: ContractAddress
         ) {
-            self.name.write(name);
-            self.board.write(BoardABIDispatcher { contract_address: board_address });
+            let board = BoardABIDispatcher { contract_address: board_address };
+
+            // register to the board
+            board.register(:name);
+
+            // save the board
+            self.board.write(board);
         }
     }
 }

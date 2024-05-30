@@ -4,7 +4,7 @@ version = 1
 [[package]]
 name = "board"
 version = "0.1.0"
-source = "git+https://github.com/0xChqrles/starknet-workshop-board?branch=main#4ea8e7a9cd403892e82bb481cbd4888641cb3a8c"
+source = "git+https://github.com/0xChqrles/starknet-workshop-board?branch=main#fd20891ea1744776905b8bac1d89649b8ad349d9"
 
 [[package]]
 name = "openzeppelin"
