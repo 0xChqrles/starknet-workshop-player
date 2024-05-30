@@ -1,3 +1,7 @@
+pub use board::strategies::{LosingStrategy, ReceivingStrategy};
+
 #[starknet::interface]
-trait IReacter<TState> {
+pub trait IReacter<TState> {
+    fn lose(self: @TState) -> LosingStrategy;
+    fn receive(self: @TState) -> ReceivingStrategy;
 }

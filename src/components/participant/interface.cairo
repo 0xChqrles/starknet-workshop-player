@@ -1,3 +1,4 @@
 #[starknet::interface]
-trait IParticipant<TState> {
+pub trait IParticipant<TState> {
+    fn name(self: @TState) -> felt252;
 }

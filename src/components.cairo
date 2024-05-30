@@ -1,5 +1,7 @@
-mod behaver;
-mod reacter;
+pub mod behaver;
+pub mod participant;
+pub mod reacter;
 
-use behaver::behaver::BehaverComponent;
-use reacter::reacter::ReacterComponent;
+pub use behaver::behaver::BehaverComponent;
+pub use participant::participant::ParticipantComponent;
+pub use reacter::reacter::ReacterComponent;

@@ -2,5 +2,19 @@
 version = 1
 
 [[package]]
+name = "board"
+version = "0.1.0"
+source = "git+https://github.com/0xChqrles/starknet-workshop-board?branch=main#4ea8e7a9cd403892e82bb481cbd4888641cb3a8c"
+
+[[package]]
+name = "openzeppelin"
+version = "0.13.0"
+source = "git+https://github.com/openzeppelin/cairo-contracts?branch=main#978b4e75209da355667d8954d2450e32bd71fe49"
+
+[[package]]
 name = "player"
 version = "0.1.0"
+dependencies = [
+ "board",
+ "openzeppelin",
+]
