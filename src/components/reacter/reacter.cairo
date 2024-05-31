@@ -2,7 +2,7 @@
 pub mod ReacterComponent {
     use player::components::participant::interface::IParticipant;
     use player::components::ParticipantComponent;
-    use player::components::reacter::interface::{IReacter, LosingStrategy, ReceivingStrategy};
+    use board::player::interface::{IReacter, LosingStrategy, ReceivingStrategy};
     use starknet::get_caller_address;
 
     //

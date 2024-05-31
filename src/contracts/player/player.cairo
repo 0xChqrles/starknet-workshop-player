@@ -3,7 +3,7 @@ pub mod Player {
     use player::components::{BehaverComponent, ReacterComponent, ParticipantComponent};
     use openzeppelin::access::ownable::OwnableComponent;
     use player::components::behaver::interface::IBehaver;
-    use player::components::reacter::interface::{LosingStrategy, ReceivingStrategy};
+    use board::player::interface::{LosingStrategy, ReceivingStrategy};
     use starknet::ContractAddress;
 
     component!(path: BehaverComponent, storage: behaver, event: BehaverEvent);
