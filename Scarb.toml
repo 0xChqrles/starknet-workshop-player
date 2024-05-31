@@ -9,3 +9,7 @@ edition = "2023_11"
 starknet = "2.6.0"
 openzeppelin = { git = "https://github.com/openzeppelin/cairo-contracts", branch = "main" }
 board = { git = "https://github.com/0xChqrles/starknet-workshop-board", branch = "main" }
+
+[[target.starknet-contract]]
+sierra = true
+casm = true
