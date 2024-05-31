@@ -22,7 +22,7 @@ curl -L https://raw.githubusercontent.com/foundry-rs/starknet-foundry/master/scr
 ```
 
 ```
-foundryup
+snfoundryup
 ```
 
 - Make sure you have the latest version of the `Universal-Sierra-Compiler`:
