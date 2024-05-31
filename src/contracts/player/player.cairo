@@ -92,13 +92,13 @@ pub mod Player {
     // Strategy selection
     //
 
-    #[abi(embed_v0)]
+    #[external(v0)]
     fn set_losing_strategy(ref self: ContractState, strategy: LosingStrategy) {
         self.ownable.assert_only_owner();
         self.reacter._set_losing_strategy(:strategy);
     }
 
-    #[abi(embed_v0)]
+    #[external(v0)]
     fn set_receiving_strategy(ref self: ContractState, strategy: ReceivingStrategy) {
         self.ownable.assert_only_owner();
         self.reacter._set_receiving_strategy(:strategy);
